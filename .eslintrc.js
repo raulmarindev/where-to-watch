@@ -24,5 +24,7 @@ module.exports = {
     "import/extensions": "off",
     "no-unused-vars": "off",
     "linebreak-style": ["error", "unix"],
+    "no-undef": "off",
+    "react/prop-types": "off",
   },
 };
