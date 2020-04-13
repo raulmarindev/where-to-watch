@@ -5,7 +5,7 @@ const http = axios.create({
   adapter: throttleAdapterEnhancer(
     cacheAdapterEnhancer(
       axios.defaults.adapter!,
-    ), { threshold: 2500 },
+    ), { threshold: 1200 },
   ),
   baseURL: process.env.REACT_APP_RAPIDAPI_ENDPOINT,
   headers: {
