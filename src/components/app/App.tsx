@@ -22,8 +22,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    if (searchTerm.length > 3) {
-      Titles.filter(searchTerm).then((response) => {
+    if (debouncedSearchTerm.length > 3) {
+      Titles.filter(debouncedSearchTerm).then((response) => {
         console.log(`response retrieved ${JSON.stringify(response)}`);
       }).catch((error) => { console.log(error); });
     }
