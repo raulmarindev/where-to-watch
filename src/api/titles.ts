@@ -1,11 +1,11 @@
-import ITitle from './models/ITitle';
-import makeRequestCreator from './requestCreator';
+import http from 'api/http';
+import ITitle from 'api/models/ITitle';
 import { AxiosResponse } from 'axios';
 
 const responseBody = (response: AxiosResponse) => response.data;
 
 const requests = {
-  get: (url: string) => makeRequestCreator(url).then(responseBody),
+  get: (url: string) => http.get(url).then(responseBody),
 };
 
 const Titles = {

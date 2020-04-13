@@ -1,4 +1,4 @@
-import ILocation from './ILocation';
+import ILocation from 'api/models/ILocation';
 
 interface ITitle {
   id: string;
