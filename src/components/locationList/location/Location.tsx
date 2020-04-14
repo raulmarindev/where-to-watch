@@ -9,7 +9,7 @@ interface ILocationProps {
 const Location: React.FC<ILocationProps> = ({ location }) => {
   const { displayName, icon, url } = location;
   return (
-    <ListGroup.Item>
+    <ListGroup.Item className="px-3">
       <a href={url} target="blank">
         <img src={icon} alt={displayName} />
       </a>

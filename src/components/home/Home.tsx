@@ -39,12 +39,10 @@ const Home = () => {
 
   return (
     <>
-      <Jumbotron fluid>
+      <Jumbotron className="mt-4" fluid>
         <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} placeHolder="Search for series or movie titles..." />
       </Jumbotron>
       {titles.length > 0 && <TitleList titles={titles} />}
-      {titles.length === 0 && debouncedSearchTerm.length > minSearchTermLength
-        && <h2>Your search returned no results. Please try again with a different term.</h2>}
     </>
   );
 };
