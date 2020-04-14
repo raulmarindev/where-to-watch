@@ -1,18 +1,34 @@
 import ITitle from 'api/models/ITitle';
 import LocationList from 'components/locationList/LocationList';
 import React from 'react';
+import {
+  Col, Container, ListGroup, Row, Card,
+} from 'react-bootstrap';
 
 interface ITitleProps {
-  title: ITitle
+  title: ITitle;
 }
 
 const Title: React.FC<ITitleProps> = ({ title }) => {
   const { locations, name, picture } = title;
   return (
-    <div>
-      <img src={picture} alt={name} />
-      <LocationList locations={locations} />
-    </div>
+    <ListGroup.Item>
+      <Container fluid>
+        <Row>
+          <Col md={4}>
+            <Card className="bg-dark text-white">
+              <Card.Img src={picture} alt={name} />
+              <Card.ImgOverlay>
+                <Card.Text className="h2 outlined">{name}</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+          <Col md={8}>
+            <LocationList locations={locations} />
+          </Col>
+        </Row>
+      </Container>
+    </ListGroup.Item>
   );
 };
 

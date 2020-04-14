@@ -1,14 +1,16 @@
 import Titles from 'api/agents/titles';
-import ILocation from 'api/models/ILocation';
-import LocationList from 'components/locationList/LocationList';
+import ITitle from 'api/models/ITitle';
 import SearchBar from 'components/searchBar/SearchBar';
+import TitleList from 'components/titleList/TitleList';
 import React, { useEffect, useState } from 'react';
+import { Jumbotron } from 'react-bootstrap';
 import { useDebouncedCallback } from 'use-debounce';
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
-  const [locations, setLocations] = useState([] as ILocation[]);
+  const [titles, setTitles] = useState([] as ITitle[]);
+  const minSearchTermLength = 3;
 
   const [debouncedCallback] = useDebouncedCallback(
     // function
@@ -25,20 +27,24 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (debouncedSearchTerm.length > 3) {
-      Titles.filter(debouncedSearchTerm).then((response) => {
-        console.log(`response retrieved ${JSON.stringify(response)}`);
+    (async () => {
+      if (debouncedSearchTerm.length > minSearchTermLength) {
+        const response = await Titles.filter(debouncedSearchTerm);
         if (response) {
-          setLocations(response[0].locations);
+          setTitles(response);
         }
-      }).catch((error) => { console.log(error); });
-    }
+      }
+    })();
   }, [debouncedSearchTerm]);
 
   return (
     <>
-      <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} />
-      <LocationList locations={locations} />
+      <Jumbotron fluid>
+        <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} placeHolder="Search for series or movie titles..." />
+      </Jumbotron>
+      {titles.length > 0 && <TitleList titles={titles} />}
+      {titles.length === 0 && debouncedSearchTerm.length > minSearchTermLength
+        && <h2>Your search returned no results. Please try again with a different term.</h2>}
     </>
   );
 };
