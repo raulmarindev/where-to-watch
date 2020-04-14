@@ -1,7 +1,12 @@
+import ILocation from 'api/models/ILocation';
+import Location from 'components/location/Location';
 import React from 'react';
 
-const LocationList = () => (
-  <div />
-);
+interface ILocationListProps {
+  locations: ILocation[];
+}
+
+// eslint-disable-next-line max-len
+const LocationList: React.FC<ILocationListProps> = ({ locations }) => <>{locations.map((location) => <Location key={location.id} location={location} />)}</>;
 
 export default LocationList;
