@@ -1,5 +1,5 @@
 import ILocation from 'api/models/ILocation';
-import Location from 'components/location/Location';
+import Location from 'components/locationList/location/Location';
 import React from 'react';
 
 interface ILocationListProps {

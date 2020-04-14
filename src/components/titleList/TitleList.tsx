@@ -1,5 +1,5 @@
 import ITitle from 'api/models/ITitle';
-import Title from 'components/title/Title';
+import Title from 'components/titleList/title/Title';
 import React from 'react';
 
 interface ITitleListProps {
