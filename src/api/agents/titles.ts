@@ -15,8 +15,8 @@ const Titles = {
     const response: IFilterResponse = await requests.get(`/lookup?term=${searchTerm}&country=${countryCode}`);
     return response.results;
   },
-  find: async (sourceId: string, source: string = 'imdb', countryCode: string = 'es'): Promise<ITitle> => {
-    const response: IFindResponse = await requests.get(`/idlookup?source_id=${sourceId}&source=${source}&country=${countryCode}`);
+  find: async (titleId: string, source: string = 'imdb', countryCode: string = 'es'): Promise<ITitle> => {
+    const response: IFindResponse = await requests.get(`/idlookup?source_id=${titleId}&source=${source}&country=${countryCode}`);
     return response.collection;
   },
 };
