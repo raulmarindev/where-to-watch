@@ -11,7 +11,7 @@ const SearchBar: React.FC<ISearchBarProps> = ({ value, onChange, placeHolder }) 
   <Row>
     <Col sm={0} md={4} />
     <Col sm={12} md={4}>
-      <Form className="px-4">
+      <Form className="px-4" onSubmit={(event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); }}>
         <Form.Group controlId="searchTerm">
           <Form.Control type="search" value={value} onChange={onChange} placeholder={placeHolder} />
           <Form.Text className="text-muted">
