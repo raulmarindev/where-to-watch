@@ -8,7 +8,7 @@ interface ITitleListProps {
 }
 
 const TitleList: React.FC<ITitleListProps> = ({ titles }) => (
-  <ListGroup className="mb-4">
+  <ListGroup className="mb-3">
     {titles.map((title) => <Title key={title.id} title={title} />)}
   </ListGroup>
 );

@@ -39,7 +39,7 @@ const Home = () => {
 
   return (
     <>
-      <Jumbotron className="mt-4" fluid>
+      <Jumbotron className="mt-3 mt-md-4 mb-3 mb-md-4" fluid>
         <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} placeHolder="Search for series or movie titles..." />
       </Jumbotron>
       {titles.length > 0 && <TitleList titles={titles} />}

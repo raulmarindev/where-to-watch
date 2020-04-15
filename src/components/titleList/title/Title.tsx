@@ -12,9 +12,10 @@ interface ITitleProps {
 const Title: React.FC<ITitleProps> = ({ title }) => {
   const { locations, name, picture } = title;
   return (
-    <ListGroup.Item>
+    <ListGroup.Item className="px-md-2 px-0">
       <Container fluid>
         <Row>
+          <Col md={3} />
           <Col md={4}>
             <Card className="bg-dark text-white">
               <Card.Img src={picture} alt={name} />
@@ -23,7 +24,7 @@ const Title: React.FC<ITitleProps> = ({ title }) => {
               </Card.ImgOverlay>
             </Card>
           </Col>
-          <Col md={8}>
+          <Col sm={8} md={4}>
             <LocationList locations={locations} />
           </Col>
         </Row>
