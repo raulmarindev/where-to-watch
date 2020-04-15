@@ -1,8 +1,8 @@
 import Home from 'components/home/Home';
 import DarkNavbar from 'components/navbar/DarkNavbar';
 import NotFound from 'components/notFound/NotFound';
+import { Container } from 'imports/bootstrap';
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { Route, Switch } from 'react-router-dom';
 import { Flip, ToastContainer } from 'react-toastify';
 

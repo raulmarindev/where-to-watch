@@ -2,8 +2,8 @@ import Titles from 'api/agents/titles';
 import ITitle from 'api/models/ITitle';
 import SearchBar from 'components/searchBar/SearchBar';
 import TitleList from 'components/titleList/TitleList';
+import { Jumbotron } from 'imports/bootstrap';
 import React, { useEffect, useState } from 'react';
-import { Jumbotron } from 'react-bootstrap';
 import { useDebouncedCallback } from 'use-debounce';
 
 const Home = () => {
@@ -11,6 +11,7 @@ const Home = () => {
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
   const [titles, setTitles] = useState([] as ITitle[]);
   const minSearchTermLength = 3;
+  const [noResults, setNoResults] = useState(false);
 
   const [debouncedCallback] = useDebouncedCallback(
     // function
@@ -29,10 +30,13 @@ const Home = () => {
   useEffect(() => {
     (async () => {
       if (debouncedSearchTerm.length > minSearchTermLength) {
-        const response = await Titles.filter(debouncedSearchTerm);
-        if (response) {
-          setTitles(response);
+        const filteredTitles = await Titles.getFiltered(debouncedSearchTerm);
+        if (filteredTitles.length > 0) {
+          setNoResults(false);
+        } else {
+          setNoResults(true);
         }
+        setTitles(filteredTitles);
       }
     })();
   }, [debouncedSearchTerm]);
@@ -43,6 +47,7 @@ const Home = () => {
         <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} placeHolder="Search for series or movie titles..." />
       </Jumbotron>
       {titles.length > 0 && <TitleList titles={titles} />}
+      {noResults && <h3>Your search returned no results</h3>}
     </>
   );
 };

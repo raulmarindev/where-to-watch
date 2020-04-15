@@ -3,7 +3,7 @@ import LocationList from 'components/locationList/LocationList';
 import React from 'react';
 import {
   Col, Container, ListGroup, Row, Card,
-} from 'react-bootstrap';
+} from 'imports/bootstrap';
 
 interface ITitleProps {
   title: ITitle;
@@ -16,7 +16,7 @@ const Title: React.FC<ITitleProps> = ({ title }) => {
       <Container fluid>
         <Row>
           <Col md={3} />
-          <Col md={4}>
+          <Col md={3}>
             <Card className="bg-dark text-white">
               <Card.Img src={picture} alt={name} />
               <Card.ImgOverlay>
@@ -24,9 +24,10 @@ const Title: React.FC<ITitleProps> = ({ title }) => {
               </Card.ImgOverlay>
             </Card>
           </Col>
-          <Col sm={8} md={4}>
+          <Col sm={8} md={3}>
             <LocationList locations={locations} />
           </Col>
+          <Col sm={0} md={3} />
         </Row>
       </Container>
     </ListGroup.Item>

@@ -1,6 +1,6 @@
 import Error404 from 'images/Error404.jpg';
+import { Image } from 'imports/bootstrap';
 import React from 'react';
-import { Image } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const NotFound: React.FC = () => (

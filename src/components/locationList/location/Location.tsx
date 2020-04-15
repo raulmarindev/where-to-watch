@@ -1,6 +1,6 @@
 import ILocation from 'api/models/ILocation';
+import { ListGroup } from 'imports/bootstrap';
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
 
 interface ILocationProps {
   location: ILocation;
@@ -9,11 +9,11 @@ interface ILocationProps {
 const Location: React.FC<ILocationProps> = ({ location }) => {
   const { displayName, icon, url } = location;
   return (
-    <ListGroup.Item className="px-3 border rounded">
-      <a href={url} target="blank">
+    <a href={url} target="blank">
+      <ListGroup.Item className="px-sm-4 px-3 border rounded">
         <img src={icon} alt={displayName} />
-      </a>
-    </ListGroup.Item>
+      </ListGroup.Item>
+    </a>
   );
 };
 

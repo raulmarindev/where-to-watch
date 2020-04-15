@@ -1,7 +1,7 @@
 import ILocation from 'api/models/ILocation';
 import Location from 'components/locationList/location/Location';
+import { ListGroup } from 'imports/bootstrap';
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
 
 interface ILocationListProps {
   locations: ILocation[];

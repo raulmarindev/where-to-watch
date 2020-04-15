@@ -1,6 +1,6 @@
 import ReactLogo from 'images/ReactLogo.png';
+import { Navbar } from 'imports/bootstrap';
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
 
 const DarkNavbar = () => (
   <Navbar bg="dark" variant="dark">

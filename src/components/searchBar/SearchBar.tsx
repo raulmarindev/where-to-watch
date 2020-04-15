@@ -1,5 +1,5 @@
+import { Col, Form, Row } from 'imports/bootstrap';
 import React from 'react';
-import { Col, Form, Row } from 'react-bootstrap';
 
 interface ISearchBarProps {
   value: string;

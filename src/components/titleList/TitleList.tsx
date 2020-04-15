@@ -1,7 +1,7 @@
 import ITitle from 'api/models/ITitle';
 import Title from 'components/titleList/title/Title';
+import { ListGroup } from 'imports/bootstrap';
 import React from 'react';
-import { ListGroup } from 'react-bootstrap';
 
 interface ITitleListProps {
   titles: ITitle[];
