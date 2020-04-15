@@ -10,7 +10,7 @@ const requests = {
   get: (url: string) => http.get(url).then(responseBody),
 };
 
-function getParsedResults(response: any) {
+function getParsedTitles(response: any) {
   const parsedResponse: IFilterResponse = response;
   const { results: parsedResults } = parsedResponse;
   const { results } = response;
@@ -25,11 +25,18 @@ function getParsedResults(response: any) {
 }
 
 const Titles = {
-  filter: async (searchTerm?: string, countryCode: string = 'es'): Promise<ITitle[]> => {
+  getFiltered: async (searchTerm?: string, countryCode: string = 'es'): Promise<ITitle[]> => {
     const response = await requests.get(`/lookup?term=${searchTerm}&country=${countryCode}`);
 
     if (response) {
-      return getParsedResults(response);
+      const titles = getParsedTitles(response);
+
+      console.log(titles);
+      if (searchTerm) {
+        return titles.filter((title) => title.name.toLowerCase().includes(searchTerm.toLowerCase()));
+      }
+
+      return titles;
     }
 
     return [];
