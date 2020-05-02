@@ -1,21 +1,20 @@
 import Home from 'components/home/Home';
-import DarkNavbar from 'components/navbar/DarkNavbar';
+import CustomNavbar from 'components/navbar/CustomNavbar';
 import NotFound from 'components/notFound/NotFound';
-import { Container } from 'imports/bootstrap';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Flip, ToastContainer } from 'react-toastify';
 
 const App = () => (
   <>
-    <DarkNavbar />
-    <Container fluid>
-      <ToastContainer position="bottom-right" newestOnTop transition={Flip} />
+    <CustomNavbar variant="light" />
+    <ToastContainer position="bottom-right" newestOnTop transition={Flip} />
+    <main>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="*" component={NotFound} />
       </Switch>
-    </Container>
+    </main>
   </>
 );
 
