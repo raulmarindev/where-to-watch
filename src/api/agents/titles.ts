@@ -31,8 +31,8 @@ const Titles = {
     if (response) {
       const titles = getParsedTitles(response);
 
-      console.log(titles);
       if (searchTerm) {
+        // eslint-disable-next-line max-len
         return titles.filter((title) => title.name.toLowerCase().includes(searchTerm.toLowerCase()));
       }
 
