@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Span = styled.span`
-width: 75px
+width: 75px;
 `;
 
 const ResultsCount: React.FC<{ resultsQuantity: number; }> = ({ resultsQuantity }) => (

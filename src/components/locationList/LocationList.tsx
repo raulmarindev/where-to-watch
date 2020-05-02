@@ -9,7 +9,7 @@ interface ILocationListProps {
 
 // eslint-disable-next-line max-len
 const LocationList: React.FC<ILocationListProps> = ({ locations }) => (
-  <ListGroup className="flex-wrap justify-content-between mt-md-0 mt-2" horizontal>
+  <ListGroup className="flex-wrap mt-md-0 mt-2 justify-content-around" horizontal>
     {locations.map((location) => <Location key={location.id} location={location} />)}
   </ListGroup>
 );
