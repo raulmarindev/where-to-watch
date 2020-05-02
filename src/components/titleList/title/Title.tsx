@@ -11,6 +11,8 @@ interface ITitleProps {
 
 const Title: React.FC<ITitleProps> = ({ title }) => {
   const { locations, name, picture } = title;
+  const characterLimit = 60;
+  const titleText = name.length < characterLimit ? name : `${name.substring(0, characterLimit)}...`;
   return (
     <ListGroup.Item className="px-md-2 px-0">
       <Container fluid>
@@ -20,7 +22,7 @@ const Title: React.FC<ITitleProps> = ({ title }) => {
             <Card className="bg-dark text-white">
               <Card.Img src={picture} alt={name} />
               <Card.ImgOverlay>
-                <Card.Text className="h2 outlined">{name}</Card.Text>
+                <Card.Text className="h2 outlined">{titleText}</Card.Text>
               </Card.ImgOverlay>
             </Card>
           </Col>
