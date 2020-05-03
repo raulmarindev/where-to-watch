@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from 'components/app/App';
 import { createBrowserHistory } from 'history';
-import 'index.css';
+import 'index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';

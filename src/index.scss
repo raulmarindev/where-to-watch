@@ -1,0 +1,42 @@
+.card-text.outlined {
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+// Required
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+/**
+ * Creates a "breakpoint" based class, for example:
+ *    $create-breakpoint-class('btn', 'purple')
+ *      --> .btn-purple, .btn-sm-purple, .btn-md-purple, ...
+ *    Where the class' content is applicable to that screen size.
+ */
+@mixin create-breakpoint-class($class-name-prefix, $class-name-suffix) {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .#{$class-name-prefix}#{$infix}-#{$class-name-suffix} {
+      @include media-breakpoint-up($breakpoint) {
+        @content;
+      }
+    }
+  }
+}
+
+$percentages: "25", "50", "75", "100";
+
+@each $p in $percentages {
+  @include create-breakpoint-class("w", $p) {
+    width: #{$p}#{"% !important"};
+  }
+}
+
+$sizes: "0", "1", "2", "3", "4", "5", "auto";
+@each $s in $sizes {
+  @include create-breakpoint-class("mx", $s)
+}
