@@ -13,7 +13,7 @@ const Header: React.FC<{ className?: string; }> = ({ className }) => (
       <Col xs={3} md={4} lg={5} />
       <Col xs={6} md={4} lg={2}>
         <h2>
-          <SearchTitle className="w-100 mx-auto d-block">
+          <SearchTitle className="w-xs-100 w-md-75 mx-auto d-block">
             <MagnifyingGlassIcon height={32} width={32} />
             {'   Search'}
           </SearchTitle>
