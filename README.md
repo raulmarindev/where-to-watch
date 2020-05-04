@@ -222,4 +222,4 @@ Project Link: [https://github.com/raulmarindev/where-to-watch](https://github.co
 [license-url]: https://github.com/raulmarindev/where-to-watch/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/raulmarindev
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/screenshot.png
