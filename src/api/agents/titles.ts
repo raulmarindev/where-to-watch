@@ -25,7 +25,7 @@ function getParsedTitles(response: any) {
 }
 
 const Titles = {
-  getFiltered: async (searchTerm?: string, countryCode: string = 'es'): Promise<ITitle[]> => {
+  getFiltered: async (searchTerm?: string, countryCode: string = 'us'): Promise<ITitle[]> => {
     const response = await requests.get(`/lookup?term=${searchTerm}&country=${countryCode}`);
 
     if (response) {
@@ -41,7 +41,7 @@ const Titles = {
 
     return [];
   },
-  find: async (titleId: string, source: string = 'imdb', countryCode: string = 'es'): Promise<ITitle> => {
+  find: async (titleId: string, source: string = 'imdb', countryCode: string = 'us'): Promise<ITitle> => {
     const response: IFindResponse = await requests.get(`/idlookup?source_id=${titleId}&source=${source}&country=${countryCode}`);
     return response.collection;
   },
