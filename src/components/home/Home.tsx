@@ -45,7 +45,7 @@ const Home = () => {
 
   return (
     <>
-      <Jumbotron className="mb-3 mb-md-4 py-5" fluid>
+      <Jumbotron className="mb-3 mb-md-4 py-5">
         <SearchHeader className="mb-4" />
         <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} />
       </Jumbotron>
