@@ -1,4 +1,3 @@
-import ResultsCount from './resultsCount/ResultsCount';
 import Titles from 'api/agents/titles';
 import ITitle from 'api/models/ITitle';
 import SearchBar from 'components/home/searchBar/SearchBar';
@@ -50,7 +49,6 @@ const Home = () => {
         <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} />
       </Jumbotron>
       {isFetching && <Spinner className="d-block mx-auto" animation="border" />}
-      {!isFetching && userIsSearching && <ResultsCount resultsQuantity={titles.length} />}
       {!isFetching && userIsSearching && <TitleList titles={titles} />}
     </>
   );
