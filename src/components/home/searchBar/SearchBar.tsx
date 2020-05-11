@@ -1,5 +1,7 @@
-import { Col, Form, Row } from 'imports/bootstrap';
 import React from 'react';
+import {
+  Form, Container,
+} from 'imports/bootstrap';
 
 interface ISearchBarProps {
   value: string;
@@ -8,17 +10,13 @@ interface ISearchBarProps {
 }
 
 const SearchBar: React.FC<ISearchBarProps> = ({ value, onChange, placeHolder }) => (
-  <Row>
-    <Col xs={0} md={1} />
-    <Col xs={12} md={10}>
-      <Form className="px-5 mx-xs-0 mx-lg-3" onSubmit={(event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); }}>
-        <Form.Group controlId="searchTerm">
-          <Form.Control className="mb-3" size="lg" type="search" value={value} onChange={onChange} placeholder={placeHolder} />
-        </Form.Group>
-      </Form>
-    </Col>
-    <Col xs={0} md={1} />
-  </Row>
+  <Container className="px-0">
+    <Form onSubmit={(event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); }}>
+      <Form.Group controlId="searchTerm">
+        <Form.Control className="mb-3" size="lg" type="search" value={value} onChange={onChange} placeholder={placeHolder} />
+      </Form.Group>
+    </Form>
+  </Container>
 );
 
 export default SearchBar;

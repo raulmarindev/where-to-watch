@@ -5,7 +5,12 @@ import SearchHeader from 'components/home/searchHeader/SearchHeader';
 import TitleList from 'components/titleList/TitleList';
 import { Jumbotron, Spinner } from 'imports/bootstrap';
 import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { useDebouncedCallback } from 'use-debounce';
+
+const JumbotronStyled = styled(Jumbotron)`
+background-color: #ECECEC;
+`;
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -44,10 +49,10 @@ const Home = () => {
 
   return (
     <>
-      <Jumbotron className="mb-3 mb-md-4 py-5">
+      <JumbotronStyled className="mb-3 mb-md-4 py-5">
         <SearchHeader className="mb-4" />
         <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} />
-      </Jumbotron>
+      </JumbotronStyled>
       {isFetching && <Spinner className="d-block mx-auto" animation="border" />}
       {!isFetching && userIsSearching && <TitleList titles={titles} />}
     </>

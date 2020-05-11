@@ -1,6 +1,6 @@
-import { IFilterResponse } from '../models/IFilterResponse';
-import { IFindResponse } from '../models/IFindResponse';
 import http from 'api/http';
+import { IFilterResponse } from 'api/models/IFilterResponse';
+import { IFindResponse } from 'api/models/IFindResponse';
 import ITitle from 'api/models/ITitle';
 import { AxiosResponse } from 'axios';
 
