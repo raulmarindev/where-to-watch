@@ -6,5 +6,6 @@ export { default as Image } from 'react-bootstrap/Image';
 export { default as Jumbotron } from 'react-bootstrap/Jumbotron';
 export { default as ListGroup } from 'react-bootstrap/ListGroup';
 export { default as Navbar } from 'react-bootstrap/Navbar';
+export { default as Nav } from 'react-bootstrap/Nav';
 export { default as Row } from 'react-bootstrap/Row';
 export { default as Spinner } from 'react-bootstrap/Spinner';
