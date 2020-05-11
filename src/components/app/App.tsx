@@ -1,3 +1,4 @@
+import CustomFooter from 'components/footer/CustomFooter';
 import Home from 'components/home/Home';
 import CustomNavbar from 'components/navbar/CustomNavbar';
 import NotFound from 'components/notFound/NotFound';
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="*" component={NotFound} />
       </Switch>
     </main>
+    <CustomFooter />
   </>
 );
 
