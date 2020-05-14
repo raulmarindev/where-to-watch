@@ -13,7 +13,7 @@ background-color: #ECECEC;
 min-height: 300px;
 `;
 
-const Home = () => {
+const Home: React.FC<{countryCode: string}> = ({ countryCode }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
   const [titles, setTitles] = useState([] as ITitle[]);
@@ -40,12 +40,12 @@ const Home = () => {
     (async () => {
       if (userIsSearching) {
         setIsFetching(true);
-        const filteredTitles = await Titles.getFiltered(debouncedSearchTerm);
+        const filteredTitles = await Titles.getFiltered(debouncedSearchTerm, countryCode);
         setTitles(filteredTitles);
         setIsFetching(false);
       }
     })();
-  }, [userIsSearching, debouncedSearchTerm]);
+  }, [userIsSearching, countryCode, debouncedSearchTerm]);
 
 
   return (
