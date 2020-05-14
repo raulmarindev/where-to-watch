@@ -4,7 +4,7 @@ import { createBrowserHistory } from 'history';
 import 'index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.min.css';
 import * as serviceWorker from 'serviceWorker';
 
@@ -12,7 +12,7 @@ const history = createBrowserHistory();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router history={history}>
+    <Router>
       <App />
     </Router>
   </React.StrictMode>,
