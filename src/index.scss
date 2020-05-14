@@ -38,5 +38,5 @@ $percentages: "25", "50", "75", "100";
 
 $sizes: "0", "1", "2", "3", "4", "5", "auto";
 @each $s in $sizes {
-  @include create-breakpoint-class("mx", $s)
+  @include create-breakpoint-class("mx", $s);
 }

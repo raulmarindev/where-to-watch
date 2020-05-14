@@ -10,6 +10,7 @@ import { useDebouncedCallback } from 'use-debounce';
 
 const JumbotronStyled = styled(Jumbotron)`
 background-color: #ECECEC;
+min-height: 300px;
 `;
 
 const Home = () => {
