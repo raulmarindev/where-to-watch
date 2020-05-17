@@ -11,7 +11,7 @@ const H2WithStyles = styled.h2`
 
 const H5WithStyles = styled.h5`
 @media (max-width: 768px) {
-  font-size: 16px
+  font-size: 14px
   }
 `;
 
