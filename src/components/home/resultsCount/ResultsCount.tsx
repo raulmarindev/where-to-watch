@@ -12,7 +12,7 @@ const ResultsCount: React.FC<{ resultsQuantity: number; }> = ({ resultsQuantity 
       {resultsQuantity}
       {' '}
       result
-      {resultsQuantity > 1 ? 's' : ''}
+      {resultsQuantity === 1 ? '' : 's'}
     </Span>
   </ListGroup.Item>
 );
