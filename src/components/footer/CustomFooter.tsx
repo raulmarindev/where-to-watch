@@ -6,6 +6,9 @@ const Footer = styled.footer`
   background-color: rgb(51,51,51);
   height: 5%;
   color: white;
+  @media (max-width: 768px) {
+    display: none;
+  }
   `;
 
 const NavLinkWithStyles = styled(Nav.Link)`
