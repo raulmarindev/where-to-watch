@@ -1,0 +1,20 @@
+{
+  "build": {
+    "env": {
+      "REACT_APP_RAPIDAPI_ENDPOINT": "@react_app_rapidapi_endpoint",
+      "REACT_APP_RAPIDAPI_HOST": "@react_app_rapidapi_host",
+      "REACT_APP_RAPIDAPI_KEY": "@react_app_rapidapi_key"
+    }
+  },
+  "routes": [
+    {
+      "headers": {
+        "cache-control": "s-maxage=604800",
+        "Content-Security-Policy": "default-src 'self' *.rapidapi.com",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Frame-Options": "SAMEORIGIN",
+        "X-Content-Type-Options": "nosniff"
+      }
+    }
+  ]
+}
