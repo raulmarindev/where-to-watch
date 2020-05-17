@@ -4,6 +4,7 @@ import Home from 'components/home/Home';
 import CountrySelect from 'components/navbar/countrySelect/CountrySelect';
 import CustomNavbar from 'components/navbar/CustomNavbar';
 import NotFound from 'components/notFound/NotFound';
+import useTapToggle from 'hooks/useTapToggle';
 import ICountry from 'models/ICountry';
 import React, { useEffect, useState } from 'react';
 import { SuggestionSelectedEventData } from 'react-autosuggest';
@@ -28,6 +29,8 @@ const App: React.FC = () => {
     setSelectedCountryCode(suggestion.code);
     navigate('/');
   };
+
+  useTapToggle();
 
   return (
     <>
