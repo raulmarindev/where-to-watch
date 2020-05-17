@@ -10,10 +10,9 @@ import { useDebouncedCallback } from 'use-debounce';
 
 const JumbotronStyled = styled(Jumbotron)`
 background-color: #ECECEC;
-min-height: 300px;
 `;
 
-const Home: React.FC<{countryCode: string}> = ({ countryCode }) => {
+const Home: React.FC<{ countryCode: string; }> = ({ countryCode }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('');
   const [titles, setTitles] = useState([] as ITitle[]);
@@ -50,8 +49,8 @@ const Home: React.FC<{countryCode: string}> = ({ countryCode }) => {
 
   return (
     <>
-      <JumbotronStyled className="mb-3 mb-md-4 py-5">
-        <SearchHeader className="mb-4" />
+      <JumbotronStyled className="mb-2 mb-md-4 py-4 py-md-5">
+        <SearchHeader className="mb-2 mb-md-4" />
         <SearchBar value={searchTerm} onChange={onSearchTermChangeHandler} />
       </JumbotronStyled>
       {isFetching && <Spinner className="d-block mx-auto" animation="border" />}

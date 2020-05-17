@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const ListGroupItem = styled(ListGroup.Item)`
 width: 142px;
 height: 65px;
+cursor: 'pointer';
 `;
 
 interface ILocationProps {
