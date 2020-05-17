@@ -4,7 +4,6 @@
       "REACT_APP_RAPIDAPI_ENDPOINT": "@react_app_rapidapi_endpoint",
       "REACT_APP_RAPIDAPI_HOST": "@react_app_rapidapi_host",
       "REACT_APP_RAPIDAPI_KEY": "@react_app_rapidapi_key",
-      "INLINE_RUNTIME_CHUNK": "@inline_runtime_chunk"
     }
   },
   "routes": [
@@ -12,7 +11,7 @@
       "src": "/*",
       "headers": {
         "cache-control": "s-maxage=604800",
-        "Content-Security-Policy": "default-src 'self' *.rapidapi.com *.googleapis.com",
+        "Content-Security-Policy": "default-src 'self' *.rapidapi.com;style-src 'self' *.googleapis.com;",
         "X-XSS-Protection": "1; mode=block",
         "X-Frame-Options": "SAMEORIGIN",
         "X-Content-Type-Options": "nosniff"
