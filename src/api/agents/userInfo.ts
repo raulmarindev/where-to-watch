@@ -12,9 +12,8 @@ const requests = {
 const UserInfo = {
   async getCurrentUserIp() {
     try {
-      const response: IPublicIpResponse = await requests.get('?format=json');
+      const response: IPublicIpResponse = await requests.get(`${process.env.REACT_APP_CORS_ANYWHERE_URL}https://api.ipify.org?format=json`);
 
-      // console.log(response);
       if (response) { return response.ip; }
     } catch (error) {
       console.log(error);
@@ -25,7 +24,7 @@ const UserInfo = {
     try {
       const userIp = await this.getCurrentUserIp();
 
-      const response: IIpGeolocationResponse = await requests.get(`/api/v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&ipAddress=${userIp}`);
+      const response: IIpGeolocationResponse = await requests.get(`${process.env.REACT_APP_CORS_ANYWHERE_URL}https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&ipAddress=${userIp}`);
 
       if (response) { return response.location?.country.toLowerCase(); }
     } catch (error) {
