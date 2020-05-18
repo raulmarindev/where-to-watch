@@ -10,10 +10,10 @@
     {
       "src": "/*",
       "headers": {
-        "cache-control": "s-maxage=604800",
+        "cache-control": "max-age=31536000",
         "X-XSS-Protection": "1; mode=block",
         "X-Frame-Options": "SAMEORIGIN",
-        "X-Content-Type-Options": "nosniff"
+        "X-Content-Type-Options": "nosniff",
       }
     }
   ]
