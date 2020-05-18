@@ -49,9 +49,11 @@ const CustomNavbar: React.FC<ICustomNavbarProps> = ({ backgroundColor, selectedC
           </Navbar.Brand>
         </NavLink>
         <Nav>
+          {selectedCountryCode && selectedCountryCode.length > 0 && (
           <Nav.Item>
             <NavLink className="text-secondary dropdown-toggle nav-link mr-md-2" to="countries">{countries.find((c) => c.code === selectedCountryCode)?.name}</NavLink>
           </Nav.Item>
+          )}
           <Nav.Item>
             <Nav.Link className="pl-2 pr-1 mx-1 py-3 my-n2" href="https://github.com/raulmarindev/where-to-watch" target="_blank"><GitHubLogoWithStyles title="GitHub" className="float-right navbar-nav-svg" /></Nav.Link>
           </Nav.Item>

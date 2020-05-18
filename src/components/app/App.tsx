@@ -12,15 +12,13 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Flip, ToastContainer } from 'react-toastify';
 
 const App: React.FC = () => {
-  const [selectedCountryCode, setSelectedCountryCode] = useState('es');
+  const [selectedCountryCode, setSelectedCountryCode] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
-      const ipInfo = await Ips.getCurrentUserIp();
-      if (ipInfo) {
-        setSelectedCountryCode(ipInfo.country_code.toLowerCase());
-      }
+      const countryCode = await Ips.getCurrentUserCountryCode();
+      setSelectedCountryCode(countryCode);
     })();
   }, []);
 

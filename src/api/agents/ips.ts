@@ -1,13 +1,21 @@
 const Ips = {
-  getCurrentUserIp: async () => {
+  getCurrentUserCountryCode: async () => {
     try {
-      const response = await fetch('https://api.ipdata.co?api-key=test');
-      return response.json();
+      const response = await fetch('http://ip-api.com/json/', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      const jsonResponse = await response.json();
+
+      if (jsonResponse) { return jsonResponse.countryCode.toLowerCase(); }
     } catch (err) {
       console.log(err);
     }
 
-    return undefined;
+    return 'us';
   },
 };
 
