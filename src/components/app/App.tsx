@@ -1,4 +1,4 @@
-import Ips from 'api/agents/ips';
+import UserInfo from 'api/agents/userInfo';
 import CustomFooter from 'components/footer/CustomFooter';
 import Home from 'components/home/Home';
 import CountrySelect from 'components/navbar/countrySelect/CountrySelect';
@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     (async () => {
-      const countryCode = await Ips.getCurrentUserCountryCode();
+      const countryCode = await UserInfo.getCurrentUserCountryCode();
       setSelectedCountryCode(countryCode);
     })();
   }, []);
