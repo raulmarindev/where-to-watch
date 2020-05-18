@@ -1,6 +1,6 @@
 import ITitle from 'api/models/ITitle';
 
-export interface IFilterResponse {
+export interface IUtellyFilterResponse {
   results: ITitle[];
   updated: string;
   term: string;

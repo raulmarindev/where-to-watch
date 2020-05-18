@@ -1,17 +1,17 @@
-import http from 'api/http';
-import { IFilterResponse } from 'api/models/IFilterResponse';
-import { IFindResponse } from 'api/models/IFindResponse';
 import ITitle from 'api/models/ITitle';
+import { IUtellyFilterResponse } from 'api/models/IUtellyFilterResponse';
+import { IUtellyFindResponse } from 'api/models/IUtellyFindResponse';
+import utellyHttp from 'api/utellyHttp';
 import { AxiosResponse } from 'axios';
 
 const responseBody = (response: AxiosResponse) => response.data;
 
 const requests = {
-  get: (url: string) => http.get(url).then(responseBody),
+  get: (url: string) => utellyHttp.get(url).then(responseBody),
 };
 
 function getParsedTitles(response: any) {
-  const parsedResponse: IFilterResponse = response;
+  const parsedResponse: IUtellyFilterResponse = response;
   const { results: parsedResults } = parsedResponse;
   const { results } = response;
 
@@ -42,7 +42,7 @@ const Titles = {
     return [];
   },
   find: async (titleId: string, source: string = 'imdb', countryCode: string = 'us'): Promise<ITitle> => {
-    const response: IFindResponse = await requests.get(`/idlookup?source_id=${titleId}&source=${source}&country=${countryCode}`);
+    const response: IUtellyFindResponse = await requests.get(`/idlookup?source_id=${titleId}&source=${source}&country=${countryCode}`);
     return response.collection;
   },
 };

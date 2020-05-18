@@ -1,6 +1,6 @@
 import ITitle from 'api/models/ITitle';
 
-export interface IFindResponse {
+export interface IUtellyFindResponse {
   collection: ITitle;
   type: string;
   id: string;
