@@ -4,8 +4,6 @@
       "REACT_APP_RAPIDAPI_ENDPOINT": "@react_app_rapidapi_endpoint",
       "REACT_APP_RAPIDAPI_HOST": "@react_app_rapidapi_host",
       "REACT_APP_RAPIDAPI_KEY": "@react_app_rapidapi_key",
-      "REACT_APP_IPIFY_KEY": "@react_app_ipify_key",
-      "REACT_APP_CORS_ANYWHERE_URL": "@react_app_cors_anywhere_url"
     }
   },
   "routes": [

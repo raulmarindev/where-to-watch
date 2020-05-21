@@ -1,6 +1,5 @@
 import ipifyHttp from 'api/ipifyHttp';
-import IIpGeolocationResponse from 'api/models/IIpGeolocationResponse';
-import IPublicIpResponse from 'api/models/IPublicIpResponse';
+import IIpInfoResponse from 'api/models/IIpInfoResponse';
 import { AxiosResponse } from 'axios';
 
 const responseBody = (response: AxiosResponse) => response.data;
@@ -10,23 +9,11 @@ const requests = {
 };
 
 const UserInfo = {
-  async getCurrentUserIp() {
-    try {
-      const response: IPublicIpResponse = await requests.get(`${process.env.REACT_APP_CORS_ANYWHERE_URL}https://api.ipify.org?format=json`);
-
-      if (response) { return response.ip; }
-    } catch (error) {
-      console.log(error);
-    }
-    return '';
-  },
   async getCurrentUserCountryCode() {
     try {
-      const userIp = await this.getCurrentUserIp();
+      const userIpInfo: IIpInfoResponse = await requests.get('https://geo.risk3sixty.com/me');
 
-      const response: IIpGeolocationResponse = await requests.get(`${process.env.REACT_APP_CORS_ANYWHERE_URL}https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&ipAddress=${userIp}`);
-
-      if (response) { return response.location?.country.toLowerCase(); }
+      if (userIpInfo) { return userIpInfo.country.toLowerCase(); }
     } catch (error) {
       console.log(error);
     }
