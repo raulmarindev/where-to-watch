@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import { useDebouncedCallback } from 'use-debounce';
 
 const JumbotronStyled = styled(Jumbotron)`
-background-color: #ECECEC;
+background-color: #fee5a1;
 `;
 
 const Home: React.FC<{ countryCode: string; }> = ({ countryCode }) => {

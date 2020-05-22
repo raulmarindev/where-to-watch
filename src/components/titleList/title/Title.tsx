@@ -23,12 +23,12 @@ const Title: React.FC<ITitleProps> = ({ title }) => {
   const imageWidth = 350;
   const imageSrcSet = `${picture}?w=${imageWidth} 1x,${picture}?w=${imageWidth}&dpr=2 2x,${picture}?w=${imageWidth}&dpr=3 3x,${picture}?w=${imageWidth}&dpr=4 4x`;
   return (
-    <ListGroup.Item className="px-md-2 px-0">
+    <ListGroup.Item className="px-md-2 px-0 border-left-0 border-right-0">
       <Container fluid>
         <Row>
-          <Col md={1} lg={3} />
-          <Col md={5} lg={3} sm={8} xs={12}>
-            <Card className="bg-dark text-white">
+          <Col lg={1} />
+          <Col md={6} lg={5} sm={8} xs={12}>
+            <Card className="bg-dark text-white border-0">
               <LazyLoadImageWithStyles
                 loading="lazy"
                 className="card-img"
@@ -42,10 +42,10 @@ const Title: React.FC<ITitleProps> = ({ title }) => {
               </Card.ImgOverlay>
             </Card>
           </Col>
-          <Col sm={8} md={6} lg={3}>
+          <Col md={6} sm={8} lg={5}>
             <LocationList locations={locations} />
           </Col>
-          <Col sm={0} md={0} lg={3} />
+          <Col lg={1} />
         </Row>
       </Container>
     </ListGroup.Item>

@@ -32,7 +32,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      <CustomNavbar variant="light" selectedCountryCode={selectedCountryCode} />
+      <CustomNavbar variant="light" backgroundColor="#e76f51" selectedCountryCode={selectedCountryCode} />
       <ToastContainer position="bottom-right" newestOnTop transition={Flip} />
       <main>
         <Routes>

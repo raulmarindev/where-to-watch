@@ -7,8 +7,9 @@ width: 75px;
 `;
 
 const ResultsCount: React.FC<{ resultsQuantity: number; }> = ({ resultsQuantity }) => (
-  <ListGroup.Item className="px-md-2 px-0 border-top">
-    <Span className="d-block mx-auto">
+  <ListGroup.Item className="px-md-2 px-0 border-left-0 border-right-0 border-top-0 text-center">
+    <Span className="font-weight-bold">
+      {'Your search returned '}
       {resultsQuantity}
       {' '}
       result

@@ -18,8 +18,7 @@ const H5WithStyles = styled.h5`
 const Header: React.FC<{ className?: string; }> = ({ className }) => (
   <>
     <Row className={className}>
-      <Col xs={3} md={4} lg={5} />
-      <Col xs={6} md={4} lg={2}>
+      <Col xs={12} className="text-center">
         <H2WithStyles>
           <span className="w-xs-100 w-md-75 mx-auto d-block">
             <MagnifyingGlassIcon height={22} width={22} />
@@ -27,14 +26,11 @@ const Header: React.FC<{ className?: string; }> = ({ className }) => (
           </span>
         </H2WithStyles>
       </Col>
-      <Col xs={3} md={4} lg={5} />
     </Row>
     <Row className={className}>
-      <Col sm={0} md={2} lg={4} />
-      <Col sm={12} md={8} lg={4}>
+      <Col xs={12} className="text-center">
         <H5WithStyles className="text-black-50 w-75 mx-auto">Search the best movies and tv shows</H5WithStyles>
       </Col>
-      <Col sm={0} md={2} lg={4} />
     </Row>
   </>
 );

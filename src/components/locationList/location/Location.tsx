@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const ListGroupItem = styled(ListGroup.Item)`
   width: 142px;
   height: 65px;
+  background-color: #bedadd;
   cursor: 'pointer';
 
   &:hover {
@@ -30,7 +31,7 @@ interface ILocationProps {
 const Location: React.FC<ILocationProps> = ({ location }) => {
   const { displayName, icon, url } = location;
   return (
-    <a href={url} target="blank" data-tap>
+    <a href={url} target="blank" title={`Watch in ${displayName}`} data-tap>
       <ListGroupItem className="px-sm-4 px-3 border rounded d-flex flex-column justify-content-center">
         <img src={icon} alt={displayName} />
       </ListGroupItem>
