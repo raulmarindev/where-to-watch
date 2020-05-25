@@ -60,7 +60,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](public/screenshot.png)
+[![Product Name Screen Shot][product-screenshot]](public/screenshot1.png)
 
 This React app connects itself to the [utelly API](https://rapidapi.com/utelly/api/utelly) and allows the user to retrieve where it's possible to watch that great movie or TV show your friend told you is a must watch. Right now only US is supported.
 
