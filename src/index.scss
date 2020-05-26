@@ -10,33 +10,17 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
-/**
- * Creates a "breakpoint" based class, for example:
- *    $create-breakpoint-class('btn', 'purple')
- *      --> .btn-purple, .btn-sm-purple, .btn-md-purple, ...
- *    Where the class' content is applicable to that screen size.
- */
-@mixin create-breakpoint-class($class-name-prefix, $class-name-suffix) {
-  @each $breakpoint in map-keys($grid-breakpoints) {
+// Create responsive versions of the width utilities
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
-    .#{$class-name-prefix}#{$infix}-#{$class-name-suffix} {
-      @include media-breakpoint-up($breakpoint) {
-        @content;
+    @each $prop, $abbrev in (width: w) {
+      @each $size, $percentage in $sizes {
+        .#{$abbrev}#{$infix}-#{$size} {
+          #{$prop}: $percentage !important;
+        }
       }
     }
   }
-}
-
-$percentages: "25", "50", "75", "100";
-
-@each $p in $percentages {
-  @include create-breakpoint-class("w", $p) {
-    width: #{$p}#{"% !important"};
-  }
-}
-
-$sizes: "0", "1", "2", "3", "4", "5", "auto";
-@each $s in $sizes {
-  @include create-breakpoint-class("mx", $s);
 }
