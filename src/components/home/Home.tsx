@@ -1,12 +1,15 @@
+import SearchPlaceHolder from './searchPlaceHolder/SearchPlaceHolder';
 import Titles from 'api/agents/titles';
 import ITitle from 'api/models/ITitle';
 import SearchBar from 'components/home/searchBar/SearchBar';
 import SearchHeader from 'components/home/searchHeader/SearchHeader';
 import TitleList from 'components/titleList/TitleList';
-import { Jumbotron, Spinner } from 'imports/bootstrap';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useDebouncedCallback } from 'use-debounce';
+import {
+  Jumbotron, Spinner,
+} from 'imports/bootstrap';
 
 const JumbotronStyled = styled(Jumbotron)`
 background-color: #fee5a1;
@@ -55,6 +58,7 @@ const Home: React.FC<{ countryCode: string; }> = ({ countryCode }) => {
       </JumbotronStyled>
       {isFetching && <Spinner className="d-block mx-auto" animation="border" />}
       {!isFetching && userIsSearching && <TitleList titles={titles} />}
+      {!isFetching && !userIsSearching && <SearchPlaceHolder />}
     </>
   );
 };
