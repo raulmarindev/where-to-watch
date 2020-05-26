@@ -1,7 +1,7 @@
 import countries from 'components/navbar/countrySelect/countries';
 import { ReactComponent as GithubLogo } from 'images/GitHubLogo.svg';
 import { ReactComponent as TwitterLogo } from 'images/TwitterLogo.svg';
-import WhereToWatchLogo from 'images/WhereToWatchLogo.png';
+import WhereToWatchLogo from 'images/WhereToWatchLogo.svg';
 import { Container, Nav, Navbar } from 'imports/bootstrap';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
@@ -45,8 +45,8 @@ const CustomNavbar: React.FC<ICustomNavbarProps> = ({ backgroundColor, selectedC
               <img
                 alt=""
                 src={WhereToWatchLogo}
-                width="30"
-                height="30"
+                width="40"
+                height="40"
                 className="d-inline-block align-top"
               />
               {' WhereToWatch'}
