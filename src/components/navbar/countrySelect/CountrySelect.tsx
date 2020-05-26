@@ -9,7 +9,7 @@ import escapeRegexCharacters from 'utils/utils';
 
 const JumbotronStyled = styled(Jumbotron)`
 min-height: 300px;
-background-color: #ECECEC;
+background-color: #fee5a1;
 `;
 
 const fontSize = '16px';
