@@ -19,7 +19,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/raulmarindev/where-to-watch">
-    <img src="public/logo192.png" alt="Logo" width="80" height="80">
+    <img src="public/logo.png" alt="Logo" width="auto" height="auto">
   </a>
 
   <h3 align="center">WhereToWatch</h3>
