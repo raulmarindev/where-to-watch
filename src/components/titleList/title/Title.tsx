@@ -1,8 +1,8 @@
 import ITitle from 'api/models/ITitle';
+import ImageLoader from 'components/imageLoader/ImageLoader';
 import LocationList from 'components/locationList/LocationList';
-import Loading from 'images/Loading.gif';
 import React from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
 import {
   Col, Container, ListGroup, Row, Card,
@@ -12,8 +12,10 @@ interface ITitleProps {
   title: ITitle;
 }
 
-const LazyLoadImageWithStyles = styled(LazyLoadImage)`
-max-height: 200px;
+const ImgContainer = styled.div`
+width: 100%;
+position: relative;
+background: #fff;
 `;
 
 const Title: React.FC<ITitleProps> = ({ title }) => {
@@ -29,14 +31,20 @@ const Title: React.FC<ITitleProps> = ({ title }) => {
           <Col lg={1} />
           <Col md={6} lg={5} sm={8} xs={12}>
             <Card className="bg-dark text-white border-0">
-              <LazyLoadImageWithStyles
-                loading="lazy"
-                className="card-img"
-                alt={name}
-                src={`${picture}?w=${imageWidth}`}
-                placeholderSrc={Loading}
-                srcSet={imageSrcSet}
-              />
+              <ImgContainer>
+                <LazyLoad
+                  debounce={false}
+                  throttle={250}
+                  offset={500}
+                >
+                  <ImageLoader
+                    className="card-img"
+                    alt={name}
+                    src={`${picture}?w=${imageWidth}`}
+                    srcSet={imageSrcSet}
+                  />
+                </LazyLoad>
+              </ImgContainer>
               <Card.ImgOverlay>
                 <Card.Text className="h2 outlined">{titleText}</Card.Text>
               </Card.ImgOverlay>
